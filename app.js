@@ -9,3 +9,20 @@
 // When overlay is clicked
 	//hide overlay
 
+var $overlay = $('<div id="overlay"> </div>');
+
+$("body").append($overlay);
+
+
+
+$("#imgGallery a").click(function(event){
+	event.preventDefault();
+	// var href = $(this).attr("href");
+	$overlay.show();
+
+});
+
+
+
+
+
