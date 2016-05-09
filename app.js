@@ -10,6 +10,11 @@
 	//hide overlay
 
 var $overlay = $('<div id="overlay"> </div>');
+var $img = $('<img>');
+var $caption = $('<p></p>');
+
+$overlay.append($img);
+$overlay.append($caption);
 
 $("body").append($overlay);
 
@@ -17,11 +22,22 @@ $("body").append($overlay);
 
 $("#imgGallery a").click(function(event){
 	event.preventDefault();
-	// var href = $(this).attr("href");
+	
+	//add image
+	var imgLink = $(this).attr("href");
+	$img.attr("src", imgLink);
+	//add caption
+	var captionText = $(this).children("img").attr("alt")
+	$caption.text(captionText);
+	
+
 	$overlay.show();
 
 });
 
+$overlay.click(function(){
+	$overlay.hide();
+})
 
 
 
